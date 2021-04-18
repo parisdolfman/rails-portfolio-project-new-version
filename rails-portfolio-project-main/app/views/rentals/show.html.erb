@@ -1,0 +1,18 @@
+<h2> Rental Show Page </h2>
+
+
+<strong> Street Address: </strong>
+<%= @rental.street_add %>
+
+<strong> City: </strong>
+<%= @rental.city %>
+
+<strong> State: </strong>
+<%= @rental.state %>
+
+<strong> Owner: </strong>
+<%= @rental.owner %>
+
+<%= link_to 'Edit', rental_path(@rental) %>
+<%= link_to 'Delete', rental_path(@rental), method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to 'Home', rentals_path %>
