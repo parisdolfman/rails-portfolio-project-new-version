@@ -11,3 +11,20 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+const { environment } = require('@rails/webpacker')
+
+const webpack = require('webpack')
+environment.plugins.prepend('Provide',
+new webpack.ProvidePlugin({
+$: 'jquery',
+})
+)
+
+module.exports = environment
+
+//= require jquery
+//= require jquery_ujs
+
+import {} from 'jquery-ujs'

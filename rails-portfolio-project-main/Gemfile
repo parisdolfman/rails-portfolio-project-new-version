@@ -13,7 +13,7 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
+#gem 'sass-rails', '>= 6'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
@@ -48,10 +48,13 @@ gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 
 # Designing process
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
 
 #Debugging 
 gem 'pry', '~> 0.13.1'
+
+#fixing JS issue
+gem 'jquery-rails'
 
 
 
