@@ -17,13 +17,18 @@
 </thead>
 
 <tbody>
+<ul>
 <% @rentals.each do |rental| %>
 <tr>
-<td> <%= rental.street_add %> </td>
+<td> <li><%= rental.street_add %> </td>
 <td> <%= rental.city %> </td>
 <td> <%= rental.state %> </td>
 <td> <%= rental.owner %> </td>
+</li>
+</ul>
 <% end %>
+<%#= link_to 'Rental (view)', rental_path(@rental) %>
+
 
 </tr>
 </tbody>

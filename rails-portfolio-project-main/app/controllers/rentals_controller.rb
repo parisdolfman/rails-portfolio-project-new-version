@@ -5,7 +5,6 @@ require 'pry'
     end
     
     def show
-        #binding.pry
         @rental = Rental.find_by(params[:id])
     end 
 
