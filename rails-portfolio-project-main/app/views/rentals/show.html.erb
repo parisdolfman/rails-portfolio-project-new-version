@@ -1,23 +1,32 @@
 <h2> Rental Show Page </h2>
 
 
-<strong> Street Address: </strong>
-<%= @rental.street_add %>
+<div class="table-responsive">
+<table class="table">
+<tbody>
+<tr>
+<td> <strong> Street Address: </strong> </td>
+<td> <%= @rental.street_add %> </td>
+</tr>
+<tr>
+<td><strong> City: </strong></td>
+<td><%= @rental.city %></td>
+</tr>
+<tr>
+<td><strong> State: </strong></td>
+<td><%= @rental.state %></td>
+</tr>
+<tr>
+<td><strong> Owner: </strong></td>
+<td><%= @rental.owner %></td>
+</tr>
+ </tbody>
+</table>
 
-<strong> City: </strong>
-<%= @rental.city %>
-
-<strong> State: </strong>
-<%= @rental.state %>
-
-<strong> Owner: </strong>
-<%= @rental.owner %>
-
-
-
-<%= link_to 'Edit', rental_path(@rental) %>
-<%= button_to 'Delete', rental_path(@rental), method: :delete, data: {confirm: "Are you sure?"} %>
-<%= link_to 'Home', rentals_path %>
+ <%= link_to "Write A Review", new_rental_review_path(@rental), class: "btn btn-danger"%>
+<li><%= link_to 'Edit', rental_path(@rental) %> </li>
+<li><%= button_to 'Delete', rental_path(@rental), method: :delete, data: {confirm: "Are you sure?"} %></li>
+<li><%= link_to 'Home', rentals_path %></li>
 
 
 
