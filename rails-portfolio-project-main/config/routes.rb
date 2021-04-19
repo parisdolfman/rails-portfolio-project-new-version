@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :reviews
 
   root "rentals#index"
-
-  get "/articles/:id", to: "articles#show"
+  
+  get "/rentals", to: "rentals#index"
+  get "/rentals/:id", to: "rentals#show"
 end

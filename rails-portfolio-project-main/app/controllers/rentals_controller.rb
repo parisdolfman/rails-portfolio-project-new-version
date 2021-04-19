@@ -45,7 +45,7 @@ require 'pry'
             :street_add,
             :city,
             :state,
-            :owner
+            :owner,
         )
     end
 
