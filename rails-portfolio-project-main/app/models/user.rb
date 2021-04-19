@@ -6,4 +6,6 @@ class User < ApplicationRecord
   
   has_many :rentals
   has_many :rentals, through: :reviews
+
+  validates :username, presence: true, uniqueness: true, length: { in: 2..20 }
 end
