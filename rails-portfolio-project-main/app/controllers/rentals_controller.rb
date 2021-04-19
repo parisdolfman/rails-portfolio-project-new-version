@@ -9,7 +9,7 @@ require 'pry'
     end 
 
     def new
-        @rental = Rental.new 
+        @rental = current_user.rentals.build(rental_params)
     end
 
     def edit
