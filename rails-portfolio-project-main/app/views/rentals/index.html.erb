@@ -20,8 +20,7 @@
 
 <% @rentals.each do |rental| %>
 <li> 
-<% full_add = rental.street_add + rental.city + rental.state + rental.owner%>
-<%= link_to full_add, rental%>
+<%= link_to "#{rental.street_add} #{rental.city} #{rental.state} - Owner #{rental.owner}", rental%>
 </li>
 
 <% end %>
