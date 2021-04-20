@@ -23,10 +23,30 @@
  </tbody>
 </table>
 
- <%= link_to "Write A Review", new_rental_review_path(@rental), class: "btn btn-danger"%>
+ <%#= link_to "Write A Review", new_rental_review_path(@rental), class: "btn btn-danger"%>
 <li><%= link_to 'Edit', rental_path(@rental) %> </li>
 <li><%= button_to 'Delete', rental_path(@rental), method: :delete, data: {confirm: "Are you sure?"} %></li>
 <li><%= link_to 'Home', rentals_path %></li>
+
+<h2> Reviews </h2> 
+
+<h2>Title</h2>
+<%= render @rental.reviews %>
+
+<h2>Add a review:</h2>
+<%= form_with model: [ @rental, @rental.reviews.build ] do |form| %>
+  <p>
+    <%= form.label :user %><br>
+    <%= form.text_field :user %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
 
 
 
