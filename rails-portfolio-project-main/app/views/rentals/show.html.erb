@@ -23,7 +23,6 @@
  </tbody>
 </table>
 
- <%#= link_to "Write A Review", new_rental_review_path(@rental), class: "btn btn-danger"%>
 <li><%= link_to 'Edit', rental_path(@rental) %> </li>
 <li><%= button_to 'Delete', rental_path(@rental), method: :delete, data: {confirm: "Are you sure?"} %></li>
 <li><%= link_to 'Home', rentals_path %></li>
