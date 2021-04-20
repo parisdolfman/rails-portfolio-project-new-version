@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
 
     def create
       @rental = Rental.find_by(params[:rental_id])
-      @review = @rental.review.create(review_params)
+      @review = @rental.reviews.create(review_params)
       redirect_to rental_path(@rental)   
     end 
 
