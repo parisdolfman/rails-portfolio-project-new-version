@@ -5,6 +5,7 @@ require 'pry'
     end
     
     def show
+        @review = Review.new
         return if @rental = Rental.find_by(id: params[:id])
         redirect_to root_path, notice: "Rental is not available"
     end 
