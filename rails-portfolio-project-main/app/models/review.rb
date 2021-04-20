@@ -6,7 +6,7 @@ class Review < ApplicationRecord
     validates :body, presence: true, length: { maximum: 500 }
     validates :title, presence: true
 
-    def zero_stars
-        5 - rating.to_i
+    def less_than_3_stars
+        rating.to_i < 3
     end 
 end
