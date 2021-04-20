@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
 
     def show
         @review = Review.find_by(id: params[:id])
-        return if @review = Review.find_by(id: params[:id])
-        redirect_to root_path, notice: "Review is not available"
+        #return if @review = Review.find_by(id: params[:id])
+        render :show
     #    @review = Review.find_by(id: params[:id])
     #    @reviews = Review.all
     end 
