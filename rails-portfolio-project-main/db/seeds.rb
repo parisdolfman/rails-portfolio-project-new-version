@@ -10,6 +10,6 @@ Rental.create(street_add: "1428 Elm Street", city: "Springwood", state: "Ohio", 
 
 User.create(username: "AAA", email: "test@test1.com", password: "123456")
 
-Review.create(title: "Weird Dreams, Nice Lawn", body: "Open kitchen space, large green lawn. Had very strange dreams while living here.", rating: 3, rental_id: 1, user_id: 1)
+Review.create(title: "Weird Dreams, Nice Lawn", body: "Open kitchen space, large green lawn. Had very strange dreams while living here.", rating: 3, rental_id: 2, user_id: 1)
 
 puts "data loaded success"
