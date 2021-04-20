@@ -5,11 +5,12 @@ require 'pry'
     end
     
     def show
-        @rental = Rental.find_by(params[:id])
+        return if @rental = Rental.find_by(id: params[:id])
+        redirect_to root_path, notice: "Rental is not available"
     end 
 
     def new
-        @rental = current_user.rentals.build(rental_params)
+        @rental = Rental.new
     end
 
     def edit
@@ -26,13 +27,13 @@ require 'pry'
     end
 
     def update
-        @rental = Rental.find_by(params[:id])
+        @rental = Rental.find_by(id: params[:id])
         @rental.update(rental_params)
         redirect_to @rental, notice: "Your rental has been succesfully updated."
     end
     
     def destroy
-        @rental = Rental.find_by(params[:id])
+        @rental = Rental.find_by(id: params[:id])
         @rental.destroy
         redirect_to root_path
     end 
