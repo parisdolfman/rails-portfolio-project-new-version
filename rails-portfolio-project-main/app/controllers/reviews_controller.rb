@@ -6,6 +6,11 @@ class ReviewsController < ApplicationController
     end 
 
     def show
+        @review = Review.find_by(id: params[:id])
+        return if @review = Review.find_by(id: params[:id])
+        redirect_to root_path, notice: "Review is not available"
+    #    @review = Review.find_by(id: params[:id])
+    #    @reviews = Review.all
     end 
 
     def new
@@ -32,7 +37,7 @@ class ReviewsController < ApplicationController
     private
 
     def set_review
-        @review = Review.find(params[:id])
+        @review = Review.find_by(id: params[:id])
     end 
 
     def review_params
