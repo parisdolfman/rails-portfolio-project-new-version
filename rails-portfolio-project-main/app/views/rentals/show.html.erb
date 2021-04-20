@@ -27,8 +27,9 @@
 <li><%= button_to 'Delete', rental_path(@rental), method: :delete, data: {confirm: "Are you sure?"} %></li>
 <li><%= link_to 'Home', rentals_path %></li>
 
-<h2> Reviews </h2> 
+
 <%= render @rental.reviews %>
+
 
 <h2>Add a review:</h2>
 <%= form_with model: [ @rental, @rental.reviews.build ] do |form| %>
