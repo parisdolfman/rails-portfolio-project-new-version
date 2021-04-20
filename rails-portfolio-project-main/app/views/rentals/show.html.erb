@@ -27,24 +27,12 @@
 <li><%= button_to 'Delete', rental_path(@rental), method: :delete, data: {confirm: "Are you sure?"} %></li>
 <li><%= link_to 'Home', rentals_path %></li>
 
-
+<h1> Reviews </h1>
 <%= render @rental.reviews %>
 
 
 <h2>Add a review:</h2>
-<%= form_with model: [ @rental, @rental.reviews.build ] do |form| %>
-  <p>
-    <%= form.label :user %><br>
-    <%= form.text_field :user %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render partial: 'reviews/form', locals: { review: @review, rental: @rental } %>
 
 
 
