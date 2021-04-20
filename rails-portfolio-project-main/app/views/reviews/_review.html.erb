@@ -1,3 +1,6 @@
+<h1> Reviews </h1>
+<% @rental.reviews.each do |review| %>
+
 <p>
   <strong>Review:</strong>
   <%= review.title %>
@@ -17,3 +20,5 @@
   <strong>User:</strong>
   <%= review.user.username %>
 </p>
+
+<% end %>
