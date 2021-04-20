@@ -16,13 +16,9 @@ class ReviewsController < ApplicationController
     end 
 
     def create
-        @review = Review.new(review_params)
-        @review.user_id = current_user.id
-        if @review.save
-            redirect_to @review, notice: "Your review has been successfully added."
-        else 
-            render :new
-        end  
+      @rental = Rental.find_by(params[:rental_id])
+      @review = @rental.review.create(review_params)
+      redirect_to rental_path(@rental)   
     end 
 
     def update
