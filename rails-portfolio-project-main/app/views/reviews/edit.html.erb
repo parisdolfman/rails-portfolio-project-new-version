@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Home', rentals_path %>
-<%= button_to 'Delete', rental_review_path(@rental, @review), method: :delete, data: {confirm: "Are you sure?"} %>
+<%= button_to 'Delete', review_path(@review), method: :delete, data: {confirm: "Are you sure?"} %>
