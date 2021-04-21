@@ -6,11 +6,7 @@ class ReviewsController < ApplicationController
     end 
 
     def show
-        #@review = Review.find_by(id: params[:id])
-        return if @review = Review.find_by(id: params[:id])
-        render :show
-    #    @review = Review.find_by(id: params[:id])
-    #    @reviews = Review.all
+        @review = Review.find_by(id: params[:id]) 
     end 
 
     def new
