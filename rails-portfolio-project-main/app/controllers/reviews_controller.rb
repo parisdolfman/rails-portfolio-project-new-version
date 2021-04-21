@@ -6,8 +6,8 @@ class ReviewsController < ApplicationController
     end 
 
     def show
-        @review = Review.find_by(id: params[:id])
-        #return if @review = Review.find_by(id: params[:id])
+        #@review = Review.find_by(id: params[:id])
+        return if @review = Review.find_by(id: params[:id])
         render :show
     #    @review = Review.find_by(id: params[:id])
     #    @reviews = Review.all
@@ -41,7 +41,7 @@ class ReviewsController < ApplicationController
     end 
 
     def review_params
-        params.require(:review).permit(:title, :body, :rating, :rental_id, :user_id)
+        params.require(:review).permit(:title, :body, :rating)
     end 
 
 
