@@ -1,22 +1,8 @@
 <h2> Reviews Index </h2>
-<table>
-<thead>
-<tr>
-<th> Rating </th>
-<th> Comment</th>
-</tr>
-</thead>
 
-<tbody>
-  <% @reviews.each do |review| %>
+<% @reviews.each do |review| %>
+<li> 
+<%= link_to "#{review.title}", review%>
+</li>
 
-  <%= review.title %>
-  <%= review.body %>
-  <%= review.rating %>
-
-  <%= link_to "#{review.title}", rental_review_path(review.rental, review) %>
-
-  <% end %>
-  </tr>
-  </tbody>
-  </table>
+<% end %>
