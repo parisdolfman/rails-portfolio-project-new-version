@@ -1,11 +1,10 @@
 <h2> Rental Index Page </h2>
 <head>
+<h3> Welcome, <%= current_user.username %> !</h3>
 </head>
 
-</tr>
-</thead>
-
-<tbody>
+<p> All Rentals </p>
+<body>
 
 <% @rentals.each do |rental| %>
 <li> 
@@ -14,8 +13,7 @@
 
 <% end %>
 
+<%#= link_to 'View My Rentals', rental_path(@rental) %> 
+<%= link_to 'Add New Rental', new_rental_path %> 
 
-
-</tr>
-</tbody>
-</table>
+</body>
