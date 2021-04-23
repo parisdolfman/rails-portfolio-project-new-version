@@ -1,5 +1,6 @@
 class RentalsController < ApplicationController
-require 'pry'
+
+    
     def index 
         @rentals = Rental.all
     end
