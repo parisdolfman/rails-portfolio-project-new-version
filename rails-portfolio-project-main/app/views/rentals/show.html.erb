@@ -32,32 +32,9 @@
 
 
 <h2>Add a review:</h2>
-
-<%= form_with model: [ @rental, @rental.reviews.build ] do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-  <%= form.label :rating %><br>
-  <%= form.number_field :rating, max: 5, min:1, class: "form-control", placeholder: "Enter a rating 1-5" %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render partial: 'reviews/form', locals: { review: @review, rental: @rental } %>
 
 
-
-
-
-
-
-<%#= render partial: 'reviews/form', locals: { review: @review, rental: @rental } %>
 
 
 
