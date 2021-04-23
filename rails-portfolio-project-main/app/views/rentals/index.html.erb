@@ -15,5 +15,6 @@
 
 <%#= link_to 'View My Rentals', rental_path(@rental) %> 
 <%= link_to 'Add New Rental', new_rental_path %> 
+<%= button_to "Logout", destroy_user_session_path, method: :delete %>
 
 </body>
