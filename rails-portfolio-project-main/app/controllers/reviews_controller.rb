@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :set_review, only: [:show, :edit, :update, :destroy]
+    # before_action :set_rental
 
     def index
         @reviews = Review.all
@@ -17,9 +18,15 @@ class ReviewsController < ApplicationController
     end 
 
     def create
-      @rental = Rental.find_by(params[:rental_id])
-      @review = @rental.reviews.create(review_params)
-      redirect_to rental_path(@rental)   
+    @rental = Rental.find_by(params[:rental_id]) #keep as is, allows for creation of review
+    @review = Review.new(review_params)
+    @review.user_id = current_user.id
+    @review.rental_id = @rental.id
+      if @review.save
+        redirect_to @rental
+          else
+            render :new
+      end 
     end 
 
     def update
@@ -37,6 +44,10 @@ class ReviewsController < ApplicationController
     def set_review
         @review = Review.find_by(id: params[:id])
     end 
+
+    # def set_rental
+    #     @rental = Rental.find_by(id: params[:id])
+    #   end
 
     def review_params
         params.require(:review).permit(:title, :body, :rating)
