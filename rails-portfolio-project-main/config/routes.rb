@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   get "/rentals", to: "rentals#index"
   get "/rentals/:id", to: "rentals#show"
 
-  get '/auth/facebook/callback' => 'sessions#create'
-
   resources :rentals do
     resources :reviews
   end
