@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     end 
 
     def create
-    @rental = Rental.find_by(params[:rental_id]) #keep as is, allows for creation of review
+    @rental = Rental.find_by(params[:rental_id]) 
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     @review.rental_id = @rental.id
