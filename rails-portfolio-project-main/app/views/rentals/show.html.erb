@@ -32,7 +32,8 @@
 
 
 <h2>Add a review:</h2>
-<%= render partial: 'reviews/form', locals: { review: @review, rental: @rental } %>
+<%= link_to "Add a Review", new_rental_review_path(@rental), class: "btn btn-danger" %>
+
 
 
 
