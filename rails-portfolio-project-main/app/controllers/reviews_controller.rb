@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  require 'pry'
     before_action :set_review, only: [:show, :edit, :update, :destroy]
     # before_action :set_rental
 
@@ -18,16 +19,18 @@ class ReviewsController < ApplicationController
     end 
 
     def create
-    @rental = Rental.find_by(params[:rental_id]) 
-    @review = Review.new(review_params)
-    @review.user_id = current_user.id
-    @review.rental_id = @rental.id
+      @rental = Rental.find_by(id: params.dig(:review, :rental_id))
+      return redirect_to root_path, notice: "Rental is not available" unless @rental
+
+      @review = @rental.reviews.new(review_params)
+      @review.user_id = current_user.id
+
       if @review.save
         redirect_to @rental
-          else
-            render :new
-      end 
-    end 
+      else
+        render :new
+      end
+    end
 
     def update
       @review.update(review_params)
