@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "/rentals", to: "rentals#index"
   get "/rentals/:id", to: "rentals#show"
 
+  #devise_for :users
+
   resources :rentals do
     resources :reviews
   end
