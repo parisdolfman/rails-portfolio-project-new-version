@@ -1,0 +1,15 @@
+<head>
+<h3> Welcome, <%= current_user.username %> !</h3>
+</head>
+
+<p> Here are your added reviews: </p>
+<body>
+
+<% @reviews.each do |review| %>
+<% if current_user.id == review.user_id %>
+<li>
+<%= review.title%> 
+<%#= link_to "#{rental.street_add} #{rental.city} #{rental.state} - Owner #{rental.owner}", rental%>
+</li>
+  <% end %>
+<% end %>
