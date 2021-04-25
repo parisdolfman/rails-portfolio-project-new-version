@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     end 
 
     def new
-        @review = Review.new
+       @review = Review.new(rental_id: params[:rental_id])
     end 
 
     def edit
@@ -53,7 +53,7 @@ class ReviewsController < ApplicationController
     #   end
 
     def review_params
-        params.require(:review).permit(:title, :body, :rating)
+        params.require(:review).permit(:title, :body, :rating, :rental_id)
     end 
 
 
