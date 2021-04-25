@@ -21,4 +21,3 @@ Confirm:
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
 
-Notes: Still need to finish setting up Devise and Omniauth gems
