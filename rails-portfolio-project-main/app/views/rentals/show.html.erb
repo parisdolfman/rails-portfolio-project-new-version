@@ -27,8 +27,9 @@
 <li><%= link_to 'Home', rentals_path %></li>
 
 <h1> Reviews </h1>
-
-<%= link_to "#{@review.title}", rental_review_path(@rental), class: "btn btn-danger" %>
+<% @rental.reviews.each do |reviews| %>
+<li><%= link_to "#{reviews.title}", rental_review_path(@review.id), class: "btn btn-danger" %></li>
+<% end %> 
 
 <%#2= render partial: 'reviews/review', locals: { review: @review, rental: @rental } %> 
 <%#1= render @rental.reviews %>
