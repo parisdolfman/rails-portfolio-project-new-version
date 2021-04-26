@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_for :users, as: 'devise', :controllers => {:registrations => "registrations"}
-  resources :users
   resources :rentals
   resources :reviews
 
