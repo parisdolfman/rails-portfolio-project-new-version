@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  resources :rentals do 
+  resources :reviews do 
     resources :users
   end 
 end
