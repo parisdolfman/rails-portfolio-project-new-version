@@ -5,7 +5,6 @@ class RentalsController < ApplicationController
     end
     
     def show
-        @review = Review.new
         @review = Review.find_by(id: params[:id])
         return if @rental = Rental.find_by(id: params[:id])
         redirect_to root_path, notice: "Rental is not available"
