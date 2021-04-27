@@ -7,9 +7,10 @@ class Review < ApplicationRecord
     validates :title, presence: true
 
 
-    def self.by_user(user_id)
-        where(user: user_id)
-    end
+    # def self.by_user(user_id)
+    #     where(user: user_id)
+    # end
 
-    scope :rental_review, ->(r) { where("rental_id = ?", r) }
+    scope :by_user, ->(user_id) { where(user: user_id) }
+
 end
