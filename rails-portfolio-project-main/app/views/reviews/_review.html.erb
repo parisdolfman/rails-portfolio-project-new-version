@@ -16,7 +16,11 @@
 
 <p>
   <strong>User:</strong>
-  <% review.user.username %>
-  <%#= review.user.username %>
+  <%= review.user.username %>
+</p>
+
+<p>
+  <strong>Rental Property: </strong>
+  <%= "#{review.rental.street_add} #{review.rental.city}, #{review.rental.state}"  %>
 </p>
 
