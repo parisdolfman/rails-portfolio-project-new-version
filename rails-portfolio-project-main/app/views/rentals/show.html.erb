@@ -31,10 +31,6 @@
 <li><%= link_to "#{reviews.title}", rental_review_path(@rental, reviews), class: "btn btn-danger" %></li>
 <% end %> 
 
-<%#2= render partial: 'reviews/review', locals: { review: @review, rental: @rental } %> 
-<%#1= render @rental.reviews %>
-
-
 <h2>Add a review:</h2>
 <%= link_to "Add a Review", new_rental_review_path(@rental), class: "btn btn-danger" %>
 
