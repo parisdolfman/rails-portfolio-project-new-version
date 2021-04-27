@@ -43,7 +43,7 @@ gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'dotenv-rails', groups: [:development, :test]
 
 # Adds facebook authentication for login
-gem 'omniauth'
+gem "omniauth", "~> 1.9.1"
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 

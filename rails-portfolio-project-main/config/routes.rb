@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  devise_for :users, as: 'devise', :controllers => {:registrations => "registrations"}
+  devise_for :users, as: 'devise', controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :rentals
   resources :reviews
 
@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   
   get "/rentals", to: "rentals#index"
   get "/rentals/:id", to: "rentals#show"
-
-  # devise_for :users, as: 'devise', :controllers => {:registrations => "registrations"}
 
   resources :rentals do
     resources :reviews
