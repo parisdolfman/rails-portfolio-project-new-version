@@ -1,5 +1,15 @@
 <h2> Reviews Index </h2>
 
+<div>
+  <h3>Filter Reviews:</h3>
+  <%= form_tag("/reviews", method: "get") do %>
+    <%= select_tag "user", options_from_collection_for_select(@users, "id", "username"), include_blank: true %>
+    <%= select_tag "review", options_for_select(["More than 3", "Old News"]), include_blank: true %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>
+
+
 <% @reviews.each do |review| %>
 <li> 
 <%= link_to "#{review.title}", review%>

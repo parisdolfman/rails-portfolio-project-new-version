@@ -26,4 +26,9 @@ class User < ApplicationRecord
     user.image = auth.info.image # assuming the user model has an image
     end
     end
+
+
+  
+
+
 end

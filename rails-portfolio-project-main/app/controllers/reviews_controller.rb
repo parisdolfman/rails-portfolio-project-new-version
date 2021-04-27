@@ -4,7 +4,13 @@ class ReviewsController < ApplicationController
     # before_action :set_rental
 
     def index
-        @reviews = Review.all
+      @users = User.all
+
+        if !params[:user].blank?
+          @reviews = Review.by_user(params[:user])
+        else
+           @reviews = Review.all
+        end 
     end 
 
     def show

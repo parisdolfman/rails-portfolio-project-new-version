@@ -6,7 +6,10 @@ class Review < ApplicationRecord
     validates :body, presence: true, length: { maximum: 500 }
     validates :title, presence: true
 
-    def less_than_3_stars
-        rating.to_i < 3
-    end 
+
+    def self.by_user(user_id)
+        where(user: user_id)
+    end
+
+    scope :rental_review, ->(r) { where("rental_id = ?", r) }
 end
