@@ -11,22 +11,21 @@ class User < ApplicationRecord
   
 
   def self.from_omniauth(auth)
-    name_split = auth.info.name.split(" ")
-    user = User.where(email: auth.info.email).first
-    user ||=  auth.info.email.blank? ? User.create!(provider: auth.provider, uid: auth.uid, username: name_split[0], email: "test@test5.com", password: Devise.friendly_token[0, 20]) : nil 
-      user
-  end
-     
-      def self.new_with_session(params, session)
-        super.tap do |user|
-          if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-            user.email = data["email"] if user.email.blank?
-          end
+  name_split = auth.info.name.split(" ")
+  user = User.where(email: auth.info.email).first
+  user ||=  auth.info.email.blank? ? User.create!(provider: auth.provider, uid: auth.uid, username: name_split[0], email: "test@test18.com", password: Devise.friendly_token[0, 20]) : nil 
+    user
+end
+   
+    def self.new_with_session(params, session)
+      super.tap do |user|
+        if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+          user.email = data["email"] if user.email.blank?
         end
       end
+    end
+
   
-    
-  
-  
-  end
-  
+
+
+end
