@@ -4,6 +4,7 @@
   <h3>Filter Reviews:</h3>
   <%= form_tag("/reviews", method: "get") do %>
     <%= select_tag "user", options_from_collection_for_select(@users, "id", "username"), include_blank: true %>
+    <%= select_tag "date", options_for_select(["By Date"]), include_blank: true %>
     <%= submit_tag "Filter" %>
   <% end %>
 </div>

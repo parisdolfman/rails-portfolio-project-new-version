@@ -8,6 +8,8 @@ class ReviewsController < ApplicationController
 
         if !params[:user].blank?
           @reviews = Review.by_user(params[:user])
+        elsif !params[:date].blank?
+          @reviews = Review.by_date
         else
            @reviews = Review.all
         end 

@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+
     belongs_to :rental
     belongs_to :user
 
@@ -7,10 +8,7 @@ class Review < ApplicationRecord
     validates :title, presence: true
 
 
-    # def self.by_user(user_id)
-    #     where(user: user_id)
-    # end
-
     scope :by_user, ->(user_id) { where(user: user_id) }
+    scope :by_date, -> {where("created_at >=?", Time.zone.today.beginning_of_day)}
 
 end

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_15_162947) do
+ActiveRecord::Schema.define(version: 2021_05_14_193249) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "rentals", force: :cascade do |t|
     t.string "street_add"
@@ -19,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_04_15_162947) do
     t.string "owner"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "category_id"
   end
 
   create_table "reviews", force: :cascade do |t|
